@@ -1,0 +1,37 @@
+cpg {
+    output = "out.cpg",
+    export = "out.dot",
+    files = [".php", ".inc"],
+    strictLinking = true,
+    strictParsing = false,
+    report = true,
+    forced = false,
+    activePasses = [
+        "MetaData",
+        "MethodsCreation",
+        "TypeCreation",
+        "CfgIntraBBCreation",
+        "CfgInterBBCreation",
+        "DeleteUnreachableCode",
+        "Dominator",
+        "PostDominator",
+        "DataDependency",
+        "DeleteEmptyOpcodes",
+        "DeleteEmptyMethods",
+        "Inheritance",
+        "CreateStubMethods",
+        "CallFinishing",
+        "NamespaceMemberCreation",
+        "LocalIdentification"],
+    php {
+        7 {
+            interpreter = "/opt/php7-sp/bin/php"
+            phpini = "/opt/php7-sp/etc/"
+        }
+        8 {
+            interpreter = "/opt/php8-sp/bin/php"
+            phpini = "/opt/php8-sp/etc/"
+        }
+
+    }
+}

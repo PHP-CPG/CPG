@@ -1,0 +1,16 @@
+*.bin.zip
+*.class
+*.log
+*.cpg
+*~
+target
+/.classpath
+/.idea
+/.settings
+.antlr/
+/bin/
+/build/
+/.bsp/
+.project
+main.conf
+/resources/docker/multilayer-php-cpg/privateCreate.sh

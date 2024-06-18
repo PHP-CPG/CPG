@@ -1,0 +1,3 @@
+<?php
+explode("\\\\", "abc\\\\def");
+?>

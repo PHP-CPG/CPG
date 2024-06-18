@@ -1,0 +1,5 @@
+#!/bin/bash
+
+SCRIPT_ABS_PATH=$(readlink -f "$0")
+SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
+JAVA_OPTS='-Xmx20g -Xss30m -XX:+UnlockDiagnosticVMOptions -XX:+ExitOnOutOfMemoryError -XX:AbortVMOnException=java.lang.StackOverflowError' $SCRIPT_ABS_DIR/target/universal/stage/bin/multilayer-php-cpg-generator -- $@
