@@ -19,7 +19,7 @@ A (Bytecode) CPG creator for PHP
 
 ## Dependencies
 
-You need to download and install our [patched](https://github.com/simkoc/php-src/) PHP versions.
+You need to download and install our [patched](https://github.com/simkoc/php-src/) PHP versions. Use the branches as specified above.
 
 Create the `main.conf` by using the main.conf.default and adjust the parameters according to your system.
 
