@@ -5,12 +5,14 @@ WORKDIR /
 RUN mkdir -p -m 0600 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
 RUN mkdir project
 RUN mkdir out
-ENV CLONE_URL="git@github.com:simkoc/php-cpg.git"
+ENV CLONE_URL="git@github.com:PHP-CPG/cpg.git"
 RUN --mount=type=ssh git clone ${CLONE_URL}
-WORKDIR php-cpg
+WORKDIR cpg
 RUN git checkout ${BRANCH}
 COPY main.conf .
 RUN sbt "project bytecode" test
 RUN sbt stage
 RUN sbt publishLocal
-RUN rm -rf /php-cpg/layerByteCode/src && rm -rf /php-cpg/.git
+RUN rm -rf /cpg/layerByteCode/src && rm -rf /cpg/.git
+WORKDIR /out/
+ENTRYPOINT ["/cpg/php2cpg","/project/","-c","/cpg/main.conf","bytecode","8"]

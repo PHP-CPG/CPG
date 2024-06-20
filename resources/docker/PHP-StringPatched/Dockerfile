@@ -20,7 +20,7 @@ RUN apt-get update && apt-get -y install gnupg ubuntu-keyring && apt-key update 
 ENV LANG en_US.utf8
 
 WORKDIR /
-RUN git clone --depth 1 https://github.com/simkoc/php-src.git -b PHP-7.4.27 php-src-7 \
+RUN git clone --depth 1 https://github.com/PHP-CPG/php-src.git -b PHP-7.4.27 php-src-7 \
   && cd php-src-7 \
   && ./buildconf \
   && ./configure --prefix /opt/php-7/ \
@@ -32,7 +32,7 @@ RUN git clone --depth 1 https://github.com/simkoc/php-src.git -b PHP-7.4.27 php-
   && rm -rf /php-src-7
 
 WORKDIR /
-RUN git clone --depth 1 https://github.com/simkoc/php-src.git -b PHP-8.2.2 php-src-8 \
+RUN git clone --depth 1 https://github.com/PHP-CPG/php-src.git -b PHP-8.2.2 php-src-8 \
   && cd php-src-8 \
   && ./buildconf \
   && ./configure --prefix /opt/php-8/ \
