@@ -1,4 +1,4 @@
-FROM ubuntu:latest as patchedphp
+FROM ubuntu:latest AS patchedphp
 
 ENV SCALA_VERSION="2.13.6"
 ENV SBT_VERSION="1.7.0"
